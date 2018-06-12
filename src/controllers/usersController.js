@@ -39,7 +39,15 @@ exports.post = (req, res, next) => {
 
 //Vem requisicão com put para atualizar 
 exports.put = (req, res, next) => {
-    const id = req.params.id;
+	usr
+		.findByIdAndUpdate(req.params.id, {
+			$set: {
+				nome: req.body.nome,
+				apelido: req.body.apelido,
+				data: req.body.data,
+				hora: req.body.hora
+			}
+		})
     res.status(200).send({
         id: id,
         item: req.body

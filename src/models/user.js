@@ -14,13 +14,13 @@ const schema = new Schema({
 	},
 	// O slug serve para compor a URL ex. cadeira gamer; com o slug ficara na url cadeira-gamer,
 	//  este será único e o index é por que ele terá um index para busca
-	slug: {
-		type: String,
-		// required: true,
-		trim: true
-		// index: true,
-		// unique: true
-	},
+	// slug: {
+	// 	type: String,
+	// 	// required: true,
+	// 	trim: true
+	// 	// index: true,
+	// 	// unique: true
+	// },
 	apelido: {
 		type: String,
 		required: true
@@ -30,21 +30,21 @@ const schema = new Schema({
 		required: true
 	},
 	//aqui o active é para ver se ele está ativo ou não
-	active: {
-		type: Boolean,
-		// required: true,
-		default: true
-	},
+	// active: {
+	// 	type: Boolean,
+	// 	// required: true,
+	// 	default: true
+	// },
 	data: {
 		type: String,
 		type: String,
 		required: true
 	},
-	//A tags servirá para facilitar a busca, terá um array de string
-	tags: [{
-		type: String,
-		// required: true
-	}]
+	// //A tags servirá para facilitar a busca, terá um array de string
+	// tags: [{
+	// 	type: String,
+	// 	// required: true
+	// }]
 });
 
 module.exports = mongoose.mongoose.model('User', schema);
