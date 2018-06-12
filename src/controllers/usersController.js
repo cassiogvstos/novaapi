@@ -4,15 +4,25 @@ const mongoose = require('../db');
 // const mongoose = require('mongoose');
 const User = require ('../models/user');
 
+exports.get = (req, res, next) => {
+	User
+		.find({})
+		.then(data => {
+			res.status(200).send(data);
+		}).catch(e => {
+			res.status(400).send(e);
+		});
+}
+
 //Vem a requisicão chamando o verbo post 
 exports.post = (req, res, next) => {
-	var usr = new User(req.body);
+	let usr = new User(req.body);
 	
 	// User.nome = req.body.type;
 	// User.apelido = req.body.type;
 	// User.sexo = req.body.type;
 
-	usr
+	let
 	   .save()
 	   .then(x => {
 			res.status(201).send({

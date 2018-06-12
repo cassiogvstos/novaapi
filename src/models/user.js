@@ -37,6 +37,7 @@ const schema = new Schema({
 	},
 	data: {
 		type: String,
+		type: String,
 		required: true
 	},
 	//A tags servirá para facilitar a busca, terá um array de string
