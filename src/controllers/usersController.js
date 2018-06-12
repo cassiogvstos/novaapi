@@ -40,7 +40,7 @@ exports.post = (req, res, next) => {
 //Vem requisicão com put para atualizar 
 exports.put = (req, res, next) => {
 	User
-		.findByIdAndUpdate(req.params.id, {//Passando o Id como parametro para update do usuário
+		.findByIdAndUpdate(req.body.id, {//Passando o Id como parametro para update do usuário
 			$set: {//seta tudo o que veio da requisisão para o que vais er alterado no uauário
 				nome: req.body.nome,
 				apelido: req.body.apelido,
