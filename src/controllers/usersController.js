@@ -6,7 +6,7 @@ const User = require ('../models/user');
 
 exports.get = (req, res, next) => {
 	User
-		.find({})
+		.find({active: true }, 'nome apelido data hora')
 		.then(data => {
 			res.status(200).send(data);
 		}).catch(e => {
