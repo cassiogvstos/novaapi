@@ -25,6 +25,7 @@ exports.post = (req, res, next) => {
 	   		});
 	   });
 };
+
 //Vem requisicão com put para atualizar 
 exports.put = (req, res, next) => {
     const id = req.params.id;
