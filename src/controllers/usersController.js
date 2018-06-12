@@ -60,7 +60,18 @@ exports.put = (req, res, next) => {
 };
 //Vem a requisicao para deletar
 exports.delete = (req, res, next) => {
-    res.status(200).send(req.body);
+	User
+		.findOneAndRemove(req.body.id)
+		.then(x => {
+			res.status(200).send({
+				message: 'Usuário Removido com sucesso!'
+			});
+		}).catch(e => {
+			res.status(400).send({
+			message: 'Falha ao tentar remover o Usuário',
+			data: e
+			});
+		});
 };
 
 //LER O LIVRO DO MARTIN FOWLER (NoSql Distiled).
