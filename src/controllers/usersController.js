@@ -1,11 +1,27 @@
 'use strict';
 
-const mongoose = require('mongoose');
+const mongoose = require('../db');
+// const mongoose = require('mongoose');
 const User = require ('../models/user');
 
 //Vem a requisicão chamando o verbo post 
 exports.post = (req, res, next) => {
-    res.status(201).send(req.body);
+	var usr = new User();
+	User.nome = req.body.type;
+	User.apelido = req.body.type;
+	User.sexo = req.body.type;
+
+	usr.save()
+	   .then(x => {
+			res.status(201).send({
+				message: 'Usuário cadastrado com sucesso!'
+			});   	
+	   }).catch(e => {
+	   		res.status(400).send({
+	   			message: 'Falha ao tentar cadastrar o usuário',
+	   			data: e
+	   		});
+	   });
 };
 //Vem requisicão com put para atualizar 
 exports.put = (req, res, next) => {

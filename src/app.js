@@ -8,6 +8,9 @@ const app = express();
 const router = express.Router();
 
 
+const User = require('./models/user.js');
+
+
 //Carregamento de rotas
 const routeIndex = require('./routes/indexRoute');
 const routeUsers = require('./routes/usersRoute');
