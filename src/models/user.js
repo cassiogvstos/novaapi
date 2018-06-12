@@ -51,3 +51,4 @@ const schema = new Schema({
 });
 
 module.exports = mongoose.mongoose.model('User', schema);
+
