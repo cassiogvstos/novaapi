@@ -6,12 +6,14 @@ const User = require ('../models/user');
 
 //Vem a requisicão chamando o verbo post 
 exports.post = (req, res, next) => {
-	var usr = new User();
-	User.nome = req.body.type;
-	User.apelido = req.body.type;
-	User.sexo = req.body.type;
+	var usr = new User(req.body);
+	
+	// User.nome = req.body.type;
+	// User.apelido = req.body.type;
+	// User.sexo = req.body.type;
 
-	usr.save()
+	usr
+	   .save()
 	   .then(x => {
 			res.status(201).send({
 				message: 'Usuário cadastrado com sucesso!'
