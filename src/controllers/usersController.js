@@ -22,7 +22,7 @@ exports.post = (req, res, next) => {
 	// User.apelido = req.body.type;
 	// User.sexo = req.body.type;
 
-	let
+	usr
 	   .save()
 	   .then(x => {
 			res.status(201).send({
