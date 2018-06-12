@@ -2,9 +2,11 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');//Converte o que vem no corpo da requisicão para JSON
+const banco = require('./db');//Chamada do objeto que conecta ao banco
 
 const app = express();
 const router = express.Router();
+
 
 //Carregamento de rotas
 const routeIndex = require('./routes/indexRoute');
