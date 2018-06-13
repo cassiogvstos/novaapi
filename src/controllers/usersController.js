@@ -13,7 +13,7 @@ exports.get = (req, res, next) => {
 			}).catch(e => {
 				res.status(400).send(e);
 			});	
-		}	
+		}else	
 		.find({}, 'nome apelido sexo data hora')												
 		.then(data => {
 			res.status(200).send(data);
