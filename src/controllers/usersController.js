@@ -5,9 +5,15 @@ const mongoose = require('../db');
 const User = require ('../models/user');
 
 exports.get = (req, res, next) => {
-	User
-		// .find({active: true }, 'nome apelido data hora') O primeiro parâmetro do find passamos o que estiver ativo no banco
-														// já no segundo após a virgula estamo dizendo quais serão os campos mostrados
+	User// O primeiro parâmetro do find passamos o que estiver ativo no banco
+		// já no segundo após a virgula estamo dizendo quais serão os campos mostrados
+		if(.find({id: true }, 'nome apelido data hora')){
+			.then(data => {
+				res.status(200).send(data);
+			}).catch(e => {
+				res.status(400).send(e);
+			});	
+		}	
 		.find({}, 'nome apelido sexo data hora')												
 		.then(data => {
 			res.status(200).send(data);
@@ -41,7 +47,7 @@ exports.post = (req, res, next) => {
 //Vem requisicão com put para atualizar 
 exports.put = (req, res, next) => {
 	User
-		.findByIdAndUpdate(req.body .id, {//Passando o Id como parametro para update do usuário
+		.findByIdAndUpdate(req.body.id, {//Passando o Id como parametro para update do usuário
 			$set: {//seta tudo o que veio da requisisão para o que vais er alterado no uauário
 				nome: req.body.nome,
 				apelido: req.body.apelido,
