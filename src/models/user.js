@@ -42,12 +42,17 @@ const schema = new Schema({
 	hora: {
 		type: String,
 		required: true
-	}
+	},
 	// //A tags servirá para facilitar a busca, terá um array de string
 	// tags: [{
 	// 	type: String,
 	// 	// required: true
 	// }]
+	image: {
+		type: String,
+		required: true,
+		trim: true
+	}
 });
 
 module.exports = mongoose.mongoose.model('User', schema);
