@@ -16,6 +16,19 @@ console.log('API rodando na porta ' + port);
 
 //Criando uma funcao que busca uma porta que esteja disponível caso a porta 3000 esteja ocupada
 function normalizePort(val) {
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'https://apinode-salty-springs-19764.herokuapp.com/');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
     const port = parseInt(val, 10);
 
     if (isNaN(port)) {
