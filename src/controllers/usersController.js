@@ -5,15 +5,9 @@ const mongoose = require('../db');
 const User = require ('../models/user');
 
 exports.get = (req, res, next) => {
-	User// O primeiro parâmetro do find passamos o que estiver ativo no banco
-		// já no segundo após a virgula estamo dizendo quais serão os campos mostrados
-		if(.find({id: true }, 'nome apelido data hora')){
-			.then(data => {
-				res.status(200).send(data);
-			}).catch(e => {
-				res.status(400).send(e);
-			});	
-		}else	
+	User
+		// .find({active: true }, 'nome apelido data hora') O primeiro parâmetro do find passamos o que estiver ativo no banco
+														// já no segundo após a virgula estamo dizendo quais serão os campos mostrados
 		.find({}, 'nome apelido sexo data hora')												
 		.then(data => {
 			res.status(200).send(data);
