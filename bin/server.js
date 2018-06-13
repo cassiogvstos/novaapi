@@ -18,7 +18,7 @@ console.log('API rodando na porta ' + port);
 function normalizePort(val) {
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Origin', 'https://apinode-salty-springs-19764.herokuapp.com/');
+    res.setHeader('Access-Control-Allow-Origin', 'https://apinode-2.herokuapp.com/');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
