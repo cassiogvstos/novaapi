@@ -17,8 +17,8 @@ console.log('API rodando na porta ' + port);
 //Criando uma funcao que busca uma porta que esteja disponível caso a porta 3000 esteja ocupada
 function normalizePort(val) {
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Origin', 'https://apinode-2.herokuapp.com/');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    // res.setHeader('Access-Control-Allow-Origin', 'https://apinode-2.herokuapp.com/');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
